@@ -1,0 +1,85 @@
+{
+  "name": "dcf-vue-pub",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "local": "vue-cli-service serve --mode local",
+    "dev": "vue-cli-service serve --mode dev",
+    "local.mob": "cross-env MOBILE=true vue-cli-service serve --mode local",
+    "dev.mob": "cross-env MOBILE=true vue-cli-service serve --mode dev",
+    "serve": "vue-cli-service serve --mode dev",
+    "build-dev": "vue-cli-service build --mode dev",
+    "build-dev-mob": "cross-env MOBILE=true vue-cli-service build --mode prd",
+    "build-stg": "vue-cli-service build --mode stg",
+    "build-prd": "vue-cli-service build --mode prd",
+    "lint": "vue-cli-service lint",
+    "inspect": "vue-cli-service inspect"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "gsap": "^3.8.0",
+    "moment": "^2.29.1",
+    "node-sass": "4.14.0",
+    "prerender-spa-plugin": "^3.4.0",
+    "sass-loader": "^7.3.1",
+    "sha256": "^0.2.0",
+    "swiper": "^5.3.7",
+    "video.js": "^7.15.4",
+    "vue": "^2.6.11",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-carousel": "^0.18.0",
+    "vue-click-outside": "^1.1.0",
+    "vue-flickity": "^1.2.1",
+    "vue-i18n": "^8.25.0",
+    "vue-marquee-text-component": "^2.0.1",
+    "vue-qrcode-component": "^2.1.1",
+    "vue-router": "^3.5.2",
+    "vue-stack-grid": "^1.2.2",
+    "vuejs-datepicker": "^1.6.2",
+    "vuex": "^3.6.2",
+    "xss": "^1.0.10"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-vue": "^7.17.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-bundle-analyzer": "^4.5.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "globals": {
+      "_": false
+    },
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/recommended",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+  }
+}
