@@ -4,11 +4,7 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  globals: {
-    _: false,
-    ROUTE: false
-  },
-  extends: [
+    extends: [
     'plugin:vue/recommended',
     'standard'
   ],
