@@ -5,7 +5,7 @@ module.exports = {
     es2021: true
   },
     extends: [
-    'plugin:vue/recommended',
+    'plugin:vue/vue3-recommended',
     'standard'
   ],
   parserOptions: {
