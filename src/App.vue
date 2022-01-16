@@ -1,6 +1,7 @@
 <template>
   <!-- <CommonInput v-mode:value="text" /> -->
   <div />
+  <!-- <Toast /> -->
 </template>
 
 <script>
