@@ -1,15 +1,19 @@
 <template>
-  <CommonInput v-mode:value="text"/>
+  <!-- <CommonInput v-mode:value="text" /> -->
+  <div />
 </template>
 
 <script>
 
 export default {
   name: 'App',
-  data(){
-  return {
-  text:''
-  }
+  data() {
+    return {
+      text: ''
+    }
+  },
+  created() {
+    window.test = this
   }
 }
 </script>
