@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.check-area { display: inline-block; min-width: rem(24); min-height: rem(24); position: relative; vertical-align: top;
+  input[type="checkbox"] { position: absolute; width: rem(1); height: rem(1); padding: 0; overflow: hidden; clip: rect(0,0,0,0); border: 0; 
+    & + label { display: inline-block; min-height: rem(24); padding: rem(2) 0 0 rem(33); position: relative; cursor:pointer; color: #666; line-height: rem(19.2); letter-spacing: rem(-.4); vertical-align: top;
+      &::before { position: absolute; left: 0; top: 0; width: rem(24); height: rem(24); text-align: center; background:#fff; border: 1px solid #bbb; content: ""; box-sizing: border-box; }
+    }
+    &:checked + label { color: #111;
+      &::before { @include svg($checked) }
+    }
+    &:disabled {
+      & + label  { color: #ccc;
+        &::before { border: 1px solid #eee;}
+      }
+      &:checked + label::before { @include svg($checkDisabled); }
+    }
+    &.btn-toggle + label { padding-right: rem(25);
+      &::after { width: rem(13); height: rem(8); position: absolute; right: 0; top: 50%; margin-top: rem(-4); @include svg($toggleArrow); content: ""; }
+    }
+    &.strong + label{ color: #111; font-weight: 500; }
+  } 
+  &.required {
+    input[type="checkbox"] + label::after { display: inline-block; margin-left: rem(5); font-size: rem(16); line-height: rem(19.2); letter-spacing: rem(-.4); color: #da2a21; content: '*'; }
+  }
+}
+
+// mobile 
+@include mobile {
+  .check-area { min-width: rem(40); min-height: rem(40); 
+    input[type="checkbox"] { 
+      & + label { min-height: rem(40); padding: rem(4) 0 0 rem(54); font-size: rem(28); line-height: rem(33.6); letter-spacing: rem(-.7);
+        &::before { width: rem(40); height: rem(40); border: rem(2) solid #bbb; }
+      }
+      &:checked + label::before { @include svg($moChecked); border: none; background-size: contain; } 
+      &:disabled + label::before { border: rem(2) solid #eee; }
+      &:checked:disabled + label::before { @include svg($moCheckDisabled); border: none; }
+      &.btn-toggle + label { padding-right: rem(42);
+        &::after { width: rem(26); height: rem(26); margin-top: rem(-13); @include svg($moToggleArrow); background-size: contain; }
+      }
+    } 
+    &.required {
+      input[type="checkbox"] + label::after { font-size: rem(28); line-height: rem(32); letter-spacing: rem(-.7); }
+    }
+  }
+}

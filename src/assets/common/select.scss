@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+.select-area { 
+  display: inline-block; max-width: 100%;
+  > div {
+    position: relative;
+    > button { width: 100%; height: rem(60); padding: 0 rem(50) 0 rem(20); border: 1px solid #ccc; color: #999; line-height: rem(28); letter-spacing: rem(-.4); text-align: left; 
+      &::after { width: rem(15); height: rem(15); position: absolute; right: rem(20); top: 50%; margin: rem(-7.5) 0 0; @include svg($iconSelectArrow); content: ""; }
+      &.open::after { transform: rotate(180deg); }
+    }
+    ul { 
+      position: absolute; top: rem(60); left: 0; right: 0; border: 1px solid #ccc; border-top: none; background: #fff; z-index: 10;
+      li {
+        button { width: 100%; padding: 0 rem(20); height: rem(48); color: #666; line-height: rem(16.8); letter-spacing: rem(-.4); text-align: left;
+          &:hover { background: #f2f2f2; }
+        }
+        .soldout-area {
+          height: rem(48); padding: 0 rem(20); position: relative; display: flex; align-items: center;
+          .btn-area { position: absolute; right: rem(20); top: rem(13); }
+          &:hover { background: #fff; }
+          del { font-weight: 500; }
+          span { display: inline-block; margin-left: rem(5); font-size: rem(12); font-weight: 700; line-height: rem(22); color: #999; }
+        }
+        &.on { background: #f2f2f2; }
+      }
+    }
+  }
+  &.small {
+    > div {
+      > button { height: rem(48); }
+      ul { top: rem(48); }
+    }
+  }
+}
+
+// mobile 
+@include mobile {
+  .select-area {
+    > div {
+      > button { height: rem(100); padding: 0 rem(70) 0 rem(28); font-size: rem(28); border: rem(2) solid #ccc; line-height: rem(49); letter-spacing: rem(-.7); 
+        &::after { width: rem(30); height: rem(30); right: rem(30); margin: rem(-15) 0 0; @include svg($moSelectArrow); background-size: contain;}
+      }
+      ul { top: rem(100); border: rem(2) solid #ccc; border-top: none;
+        li button { padding: 0 rem(28); height: rem(100); font-size: rem(28); line-height: rem(49); letter-spacing: rem(-.7);
+        }
+      }
+    }
+  }
+
+  .search-area .select-area, .search-area .select-area > div { width:rem(210) !important; }
+  .select-area.small  > div { width: 100% !important; 
+    > button { height: rem(100); }
+    ul { top: rem(100); }
+  }
+  .select-area {
+    select { width: 100%; height: rem(100); padding: 0 rem(70) 0 rem(28); border: rem(2) solid #ccc; color: #999; font-size: rem(28); line-height: rem(49); letter-spacing: rem(-.7); }
+  }
+}

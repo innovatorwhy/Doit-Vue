@@ -1,0 +1,255 @@
+@charset "UTF-8";
+
+
+/* button */
+.btn-area {
+  text-align: center;
+  button { 
+    display: inline-block; min-width: rem(190); height: rem(60); padding: 0 rem(10) 0;  text-align: center; letter-spacing: rem(-0.65); line-height: rem(48);
+    &.medium { height: rem(52); font-size: rem(15); line-height: rem(50); }
+    &.small { height: rem(48); font-size: rem(14); line-height: rem(46); }
+    &.smaller { min-width: 0; height: rem(40); font-size: rem(14); line-height: rem(38); }
+    &:disabled { cursor: default; }
+    &.primary { 
+      background: #111; color: #fff;
+      &:hover { background: #fff; border: 1px solid #111; color: #111; }
+      &:disabled { background: #eee; border: 1px solid #eee; color: #ccc; }
+      &.download {
+        &::after { display: inline-block; width: rem(14); height: rem(14); margin-left: rem(5); @include svg($iconDownloadWhite); content: ""; vertical-align: middle; }
+        &:hover { background: #111; border: 1px solid #111; color: #fff; }
+      }
+    }
+    &.secondary { 
+      border: 1px solid #111; color: #111;
+      &:hover { background-color: #111; color: #fff; opacity: .5; }
+      &:disabled { background-color: #fff; border: 1px solid #eee; color: #ccc;
+        &:hover { opacity: 1; }
+      }
+      &.more {
+        &:hover { background-color: #fff; border: 1px solid #111; color: #111; }
+        &::after { display: inline-block; width: rem(15); height: rem(15); margin-left: rem(10); @include svg($btnMore); content: ""; vertical-align: middle; }
+      }
+      &.go-page::after { display: inline-block; width: rem(12); height: rem(12); margin-left: rem(5); @include svg($iconLink); content: ""; }
+      &.new-page-link{ 
+        &::after { display: inline-block; width: rem(12); height: rem(12); margin-left: rem(5); @include svg($blankLinkBlack); content: ""; }
+        &:hover {
+          opacity: 1;
+          &::after { @include svg($blankLink); }
+        }
+      }
+      &.download {
+        &:hover { background-color: #fff; border: 1px solid #111; color: #111; }
+        &::after { display: inline-block; width: rem(15); height: rem(15); margin-left: rem(10); @include svg($btnDownload); content: ""; vertical-align: middle; }
+      }
+      &.info {
+        &::after { display: inline-block; width: rem(14); height: rem(14); margin-left: rem(5); @include svg($iconInfo); content: ''; }
+        &:hover { background-color: #fff; color: #111; opacity: 1; }
+      }
+      &.light{ border: solid 1px #ddd; }
+      &.like {
+        &:hover { background-color: #fff; color: #111; opacity: 1; }
+        &::after { display: inline-block; width: rem(20); height: rem(18); margin-left: rem(7); @include svg($shopLike); content: ''; vertical-align: middle; }
+      }
+      &.cart {
+        &:hover { background-color: #fff; color: #111; opacity: 1; }
+        &::after { display: inline-block; width: rem(20); height: rem(18); margin-left: rem(7); @include svg($shopCart); content: ''; vertical-align: middle; }
+      }
+    }    
+    &.btn-search { min-width: 0; width: rem(60); height: rem(60); @include svg($search); font-size: 0; color: transparent; }
+    &.btn-share { min-width: auto; width: rem(32); height: rem(32); font-size: 0; @include svg($share); background-size: 100% auto; }
+    &.btn-ticketing { width: rem(299); margin-left: rem(47); }
+  }
+  a { display: inline-block; text-decoration: underline; color: #222; line-height: rem(19.2); letter-spacing: rem(-.4);
+    &:hover { text-decoration: underline; }
+    &[class^=icon] { text-decoration: none;
+      &::after { display: inline-block; width: rem(12); height: rem(12); margin-left: rem(5); content:""; }
+      &.new-page-link::after { @include svg($blankLinkBlack); }
+      &.popup-link::after { @include svg($popLinkBlack); }
+      &.go-page::after { @include svg($iconLink); }
+    }
+    &.gray { color: #999; }
+  }
+  &.btn-reservation { 
+    width: 100%; 
+    button { width: 100%; }
+  }
+}
+.pin-area .btn-area button { min-width: 100%; }
+.btn-area-wrap .btn-area button { min-width: 100%; }
+.layer-dimmed .layer .layer-footer button { min-width: 100%; }
+.btn-group .btn-area button { min-width: 100%; }
+.status .btn-area { 
+  margin-top: rem(12); 
+  a.icon.go-page { 
+    min-width: rem(120); max-width: 100%; height: rem(48); font-size: rem(14); border: 1px solid #111; line-height: rem(48);
+  }
+}
+.sub-title-area {
+  .right { 
+    .btn-area { display: inline-block;
+      & + .btn-area { margin-left: rem(12); }
+      button { min-width: rem(120); }
+    }
+  }
+}
+table td .btn-area button { min-width: 100%; }
+.mypage-area .search-form .btn-search { height: rem(48); width: rem(48); }
+.btn-group-area {
+  .btn-area {
+    display: inline-block; 
+    & + .btn-area { margin-left: rem(18); }
+  }
+}
+// main
+.main { 
+  .btn-group {
+    margin-top: rem(20); flex: 1;
+    .btn-area + .btn-area { margin-left: rem(28); }
+    button { 
+      width: rem(190); height: rem(60); border: rem(2) solid #fff; font-weight: 600; 
+      &.primary { background: transparent; color: #fff; 
+        &:hover { background: transparent; color: #fff; border: rem(2) solid #fff; }
+      }
+      &.secondary { background: #fff; color: #111; 
+        &:hover { background: #fff; color: #111; opacity: 1; }
+      }
+    }
+  }
+  .pagination-progress { 
+    .btn-area {
+      position: absolute; right: rem(-20); top: rem(-4);
+      button { display: inline-block; min-width: 0; width: rem(10); height: rem(10); @include svg($iconPlay); font-size: 0; color: transparent; vertical-align: top; }
+      &.play button { @include svg($iconPause); }
+    }
+  }
+}
+
+// shop
+.visual-swiper-area {
+  .btn-area {
+    position: absolute; left: rem(1580); top: 0; z-index: 5;
+    &.play button { @include svg($iconShopPlay); }
+    button { width: rem(14); min-width: 0; height: rem(14); @include svg($iconShopPause); font-size: 0; color: transparent; }
+  }
+}
+
+.field-area{
+  &.between{
+    .btn-area { display: inline-block; }
+  }
+  .btn-area{
+    button{ width: 100%; }
+  }
+}
+.period-area .btn-area { display: inline-block; }
+
+//event
+.btn-intro-group {
+  .btn-area button.secondary { width: rem(174); min-width: auto; }
+}
+.btn-event-group {
+  .btn-area { 
+    display: inline-block; width: rem(620); margin: 0 rem(10);
+    button { width: 100%; }
+  }
+}
+.btn-program-visual {
+  .btn-area {
+    .primary { 
+      background: #fff; color: #111;
+      &:hover { border-color: #fff; }
+    }
+    .secondary { 
+      position: relative; border-color: #fff; color: #fff;
+      &:hover { background:transparent; opacity: 1; }
+    }
+  }
+}
+
+// mobile 
+@include mobile {
+  /* button */
+  .btn-area {
+    button { 
+      min-width: rem(330); height: rem(100); font-size: rem(26); letter-spacing: rem(-0.65);
+      &.full { width: 100% !important; }
+      &.medium { height: rem(90); font-size: rem(24); }
+      &.small { height: rem(80); font-size: rem(22); }
+      &:disabled { cursor: default; }
+      &.primary { 
+        &:hover { border: 2px solid #111; }
+        &:disabled { border: 2px solid #eee; }
+        &.download { height: rem(90);
+          &::after { width: rem(26); height: rem(26); margin-left: rem(20); @include svg($btnDownloadWhite); background-size: contain; }
+        }
+      }
+      &.secondary { border: 2px solid #111;
+        &:disabled { border: 2px solid #eee; }
+        &.more { height: rem(90);
+          &::after { width: rem(26); height: rem(26); margin-left: rem(20); @include svg($moBtnMore); background-size: contain; }
+        }
+        &.download { height: rem(90);
+          &::after { width: rem(26); height: rem(26); margin-left: rem(20); @include svg($btnDownload); background-size: contain; }
+        }
+        &.go-page::after { width: rem(24); height: rem(24); margin-left: rem(16); @include svg($iconLink); content: ""; }
+        &.new-page-link{ 
+          &::after { width: rem(24); height: rem(24); margin-left: rem(16); @include svg($blankLinkBlack); background-size: contain; content: ""; }
+          &:hover {
+            opacity: 1;
+            &::after { @include svg($moBlankLink); background-size: contain; }
+          }
+        }
+      }  
+      &.btn-search { min-width: 0; width: rem(48); height: rem(100); @include svg($moSearchBlack); font-size: 0; color: transparent; background-size: contain; }  
+      &.full { min-width: 100% !important; }
+      &.btn-ticketing { width: rem(299); height: rem(60); font-size: rem(24); }
+    }
+    a { color: #222; font-size: rem(28); line-height: rem(33.6); letter-spacing: rem(-.7); text-decoration: underline;
+      &[class^=icon] {
+        &::after { width: rem(24); height: rem(24); margin-left: rem(13); }
+        &.new-page-link::after { @include svg($moBlankLinkBlack); background-size: contain; }
+        &.popup-link::after { @include svg($moPopLinkBlack); background-size: contain; }
+        &.go-page::after { @include svg($moIconLink); background-size: contain; }
+      }
+    }
+  }
+  .full .btn-area { width: 100%; }
+  .form-area .btn-area-wrap button { min-width: 100%; }
+  .mypage-area .search-form {
+    .btn-area {
+      margin-top: rem(-20); top: 50%; right: rem(20);
+      .btn-search { height: rem(40); width: rem(40); }
+    }
+  } 
+  // main
+  .main { 
+    .btn-group {
+      margin-top: rem(70);
+      .btn-area + .btn-area { margin-left: rem(30); }
+      button { 
+        height: rem(100); font-size: rem(26); letter-spacing: rem(-.65);
+        &.secondary { background: #fff; color: #111; border: 0;
+          &:hover { background: #fff; color: #111; opacity: 1; }
+        }
+      }
+    }
+    .pagination-progress { 
+      .btn-area {
+        right: rem(-28); top: rem(-7);
+        button { width: rem(12); height: rem(18); @include svg($iconPlay); background-size: cover; }
+        &.play button { @include svg($moIconPause); }
+      }
+    }
+  }
+  .purchase-list .btn-area a[class^=icon].go-page::after { width: rem(12); height: rem(12); margin-left: rem(5); @include svg($iconLinkS); vertical-align: middle; background-size: contain; }
+
+  //event
+  .btn-intro-group {
+    .btn-area button.secondary { width: 100%; min-width: auto; }
+  }
+  .btn-event-group {
+    .btn-area { width: 100%; margin: rem(15) 0; }
+    &.space { padding: 0 rem(30); }
+  }
+  .conference-container .conference-list ul li .btn-info-group .btn-area:nth-child(3) button { width: 100%; }
+}

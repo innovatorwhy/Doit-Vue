@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.textarea {
+  textarea { width: 100%; padding: rem(20); border: 1px solid #ddd; line-height: rem(28); letter-spacing: rem(-.4);
+    &::placeholder { color: #999; }
+  }
+}
+
+// mobile 
+@include mobile {
+  .textarea textarea { width: 100%; padding: rem(28); border: rem(2) solid #ddd; font-size: rem(28); line-height: rem(49); letter-spacing: rem(-.7); }
+}

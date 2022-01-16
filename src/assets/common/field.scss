@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.input-area {
+  display: inline-block; width: 100%; position: relative; vertical-align: top;
+  input:not(checkbox):not(radio) { width: 100%; height: rem(60); padding: rem(16) rem(19); border: 1px solid #ddd; background: #fff; color: #111; line-height: rem(19.2); letter-spacing: rem(-.4);
+    &::placeholder { color: #999; }
+    &:disabled { background: #f6f7fb; color: #999; }
+    &.error { border-color: #da2a21; }
+    &[type="date"] {
+      padding-right: rem(50); position:relative; letter-spacing: rem(-.5); font-family: 'Geogrotesque';
+      &::placeholder { letter-spacing: rem(-.5); font-family: 'Spoqa Han Sans Neo'; }
+      &::-webkit-calendar-picker-indicator { width: rem(24); height: rem(24); margin-top: rem(-14); position: absolute; top: 50%; right: rem(20); color: transparent; @include svg($calendar); background-position: right 1px center; background-size: contain; cursor: pointer; }
+      &::-webkit-inner-spin-button, &::-webkit-clear-button { display: block; }
+    }
+  }
+  .error-msg { margin-top: rem(10); position: relative; padding-left: rem(32); color: #da2a21; font-size: rem(15); line-height: rem(22); letter-spacing: rem(-.38);
+    &::before { position: absolute; left: 0; top: 0; width: rem(22); height: rem(22); @include svg($iconError); content: ""; }
+  }
+  &.algin-right input:not(checkbox):not(radio) { text-align: right; }
+  .unit { padding-right: rem(24); position: absolute; right: 0; top: 0; line-height: rem(60); }
+}
+.search-area .search-form  input { padding-right: rem(60); border: none; border-bottom: rem(2) solid #000; }
+.mypage-area .search-area .search-form input { height: rem(48); border-bottom: 1px solid #000; }
+
+// mobile 
+@include mobile {
+  .input-area {
+    input:not(checkbox):not(radio) { height: rem(100); padding: rem(33) rem(28); border: rem(2) solid #ddd; font-size: rem(28); line-height: rem(33.6); letter-spacing: rem(-.7); }
+    .error-msg { margin-top: rem(20); padding-left: rem(42); font-size: rem(26); line-height: rem(30); letter-spacing: rem(-.65);
+      &::before { width: rem(30); height: rem(30); @include svg($moIconError); background-size: contain;}
+    }
+    .unit { padding-right: rem(24); font-size: rem(30); line-height: rem(100); letter-spacing: rem(-.9); }
+  }
+  .search-area .search-form .input-area { width: 100% !important; }
+  .pin-area .input-area-wrap .input-area input { border: 0; }
+  .mypage-area .search-area .search-form input { height: rem(100); border: rem(2) solid #ddd; }
+}

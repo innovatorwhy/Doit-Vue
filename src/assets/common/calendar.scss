@@ -1,0 +1,114 @@
+.datepicker_wrap{
+    position: relative;
+    z-index: 9;
+    padding-bottom: 20px;
+    background: #fff;
+    .big{
+        width:500px;
+        height:400px;
+    }
+    .small{
+        width:100%;
+        height:auto;
+    }
+}
+.vdp-datepicker__calendar{
+  width:100%;
+  height:100%;
+  border: none;
+  font-size: 13px;
+  div{
+      height:100%; line-height: 46px;
+  }
+}
+.dcalender>header {
+    justify-content: center;
+    display: flex;
+}
+.vdp-datepicker__calendar header span {
+    width: auto ; font-size: rem(20);
+}
+.vdp-datepicker__calendar header .prev, .vdp-datepicker__calendar header .next{
+    width: 30px ;
+}
+.vdp-datepicker__calendar .cell{
+    margin: 0.5px;
+    width: calc(14.28% - 1px);
+    height: calc(16.28% - 1px);
+    >div{ font-size: rem(16); font-weight: 500; letter-spacing: rem(-0.48); }
+}
+.vdp-datepicker__calendar .cell.day{
+    border: 0.5px solid #e4e7ed;
+    .cell_wrap{
+        display: block;
+        :first-child{
+            height: calc(100% - 20px);
+        }
+        .circle_wrap{
+            justify-content: center;
+            display: flex;
+            height:auto;
+            .circle{
+                width: 10px;
+                height: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+                position: relative;
+                margin-right: 3px;
+            }
+            .circle.blue{
+                background: blue;
+            }
+            .circle.red{
+                background: red;
+            }
+        }
+    }
+    
+}
+
+.vdp-datepicker__calendar .cell.day.blank{
+    border: none ;
+}
+.vdp-datepicker__calendar .cell.selected {
+    background: black;
+    color: white;
+}
+.cell.disabled {
+     border: none ;
+    color: #ddd;
+    cursor: default;
+    background: #ddd;
+    color: grey ;
+    font-weight: normal;
+}
+
+.ticketing-list-area {
+    .datepicker_wrap { width: 100%; padding: 0; text-align: center; border: none; }
+    .vdp-datepicker__calendar .cell.day-header { font-size: rem(18); }
+    .vdp-datepicker__calendar { width: 100%; }
+}
+
+.calendar .vdp-datepicker__calendar .cell.day-header { font-size: rem(18) !important; }
+
+@include mobile {
+  .datepicker_wrap{
+    .vdp-datepicker__calendar{
+      div{ line-height: rem(90); }
+    }
+  }
+  .dcalender>header {
+      margin-bottom: rem(40);
+  }
+  .vdp-datepicker__calendar header span {
+    font-size: rem(40);
+  }
+  .vdp-datepicker__calendar header .prev, .vdp-datepicker__calendar header .next{
+      width: 30px ;
+  }
+  .vdp-datepicker__calendar .cell{
+      >div{ font-size: rem(30); font-weight: 500; letter-spacing: rem(-0.48); }
+  }
+  .calendar .vdp-datepicker__calendar .cell.day-header { font-size: rem(30) !important; font-weight: 500; color: #666; letter-spacing: rem(-.75); }
+}
