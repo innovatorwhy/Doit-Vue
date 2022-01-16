@@ -1,10 +1,7 @@
-import { createStore, createNamespacedHelpers } from 'vuex'
+import { createStore } from 'vuex'
 
-import { module as common } from './modules/common/commonStore'
+import { module as common } from './modules/common'
 import { module as main } from './modules/main/mainStore'
-
-
-import { TYPES, ModuleName } from '@store/exhibition/exhibitionStore'
 
 
 export default createStore({
@@ -13,4 +10,3 @@ export default createStore({
     main
   }
 })
-const exhibitionStore = createNamespacedHelpers(ModuleName)
