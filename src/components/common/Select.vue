@@ -141,6 +141,7 @@ export default {
       default: 0
     }
   },
+  emits: ['change', 'select-click', 'update:value'],
   data() {
     return {
       userId: '',
@@ -210,7 +211,7 @@ export default {
       this.openStatus = false
       this.selectedIndex = i
       this.$emit('select-click', value)
-      this.$emit('input', value)
+      this.$emit('update:value', value)
     },
     outSideHandler(event) {
       const isClickInside = this.$el.contains(event.target)
@@ -234,5 +235,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@styles/common/select.scss';
+// @import '@styles/common/select.scss';
 </style>

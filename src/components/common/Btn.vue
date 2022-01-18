@@ -90,5 +90,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '@styles/common/btn.scss';
+// @import '@styles/common/btn.scss';
 </style>

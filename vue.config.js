@@ -13,6 +13,7 @@ module.exports = merge(buildConfig, {
     resolve: {
       alias: {
         '@': path.join(__dirname, 'src/'),
+        '@pages': path.join(__dirname, 'src/pages'),
         '@store': path.join(__dirname, 'store/modules'),
         '@styles': path.join(__dirname, 'src/assets/styles'),
         '@media': path.join(__dirname, 'src/assets/media'),

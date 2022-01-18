@@ -11,20 +11,17 @@ const module = {
   },
   actions: {
     showToast ({ state }, option) {
-      state.dangerouslyUseHTMLString = false
       state.message = ''
       state.onClose = null
       state.visible = true
       if(typeof option === 'object') {
         state.message = option.message
-        state.dangerouslyUseHTMLString = option.dangerouslyUseHTMLString
         if (typeof option.onClose === 'function') {
           state.onClose = option.onClose
         }
       }else{
         state.message = option
       }
-      console.log('showToast')
       state.timer = setTimeout(() => {
         module.actions.hideToast({ state: state })
       }, state.duration)

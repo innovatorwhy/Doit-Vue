@@ -92,6 +92,7 @@ export default {
       required: false
     }
   },
+  emits: ['onBlur', 'onFocus', 'onKeydown', 'onKeypress', 'onInput', 'onKeyup', 'update:value'],
   data() {
     return {
       userId: '',
@@ -112,7 +113,7 @@ export default {
   },
   watch: {
     internalValue(val) {
-      this.$emit('input', val)
+      this.$emit('update:value', val)
     },
     value: {
       immediate: true,
@@ -128,7 +129,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@styles/common/field.scss';
+// @import '@styles/common/field.scss';
 </style>
 
 

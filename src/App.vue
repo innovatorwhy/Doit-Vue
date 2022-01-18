@@ -1,21 +1,10 @@
 <template>
-  <!-- <CommonInput v-mode:value="text" /> -->
-  <div />
-  <!-- <Toast /> -->
+  <router-view />
 </template>
 
 <script>
 
 export default {
-  name: 'App',
-  data() {
-    return {
-      text: ''
-    }
-  },
-  created() {
-    window.test = this
-  }
 }
 </script>
 

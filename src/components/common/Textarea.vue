@@ -59,6 +59,7 @@ export default {
       required: false
     }
   },
+  emits: ['update:value'],
   data() {
     return {
       userId: '',
@@ -83,7 +84,7 @@ export default {
   },
   watch: {
     internalValue(val) {
-      this.$emit('input', val)
+      this.$emit('update:value', val)
     },
     value: {
       immediate: true,
@@ -100,6 +101,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@styles/common/textarea.scss';
+// @import '@styles/common/textarea.scss';
 </style>
 

@@ -60,6 +60,7 @@ export default {
       required: false
     }
   },
+  emits: ['radio-click'],
   data() {
     return {
       check: this.checked,
@@ -81,5 +82,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@styles/common/radio.scss';
+//@import '@styles/common/radio.scss';
 </style>

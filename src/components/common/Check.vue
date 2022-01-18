@@ -50,6 +50,7 @@ export default {
       required: false
     }
   },
+  emits: ['change', 'click', 'update:value'],
   data() {
     return {
       userId: '',
@@ -58,7 +59,7 @@ export default {
   },
   watch: {
     internalValue(val) {
-      this.$emit('input', val)
+      this.$emit('update:value', val)
     },
     value: {
       immediate: true,
@@ -79,5 +80,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@styles/common/check.scss';
+// @import '@styles/common/check.scss';
 </style>
