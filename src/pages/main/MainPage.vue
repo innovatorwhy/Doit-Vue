@@ -1,6 +1,5 @@
 <template>
-  <!-- <CommonInput v-mode:value="text" />  -->
-  <div>sdklfsdlkfjlksdj</div>
+  <CommonInput v-model:value="text" /> 
 </template>
 
 <script>
@@ -24,6 +23,11 @@ export default {
     ...mapGetters([]),
     ...toastStore.mapGetters([]),
     ...mainStore.mapGetters(['menuList'])
+  },
+  watch: {
+    text(val) {
+      console.log('text', val)
+    }
   },
   created() {
     window.test = this
